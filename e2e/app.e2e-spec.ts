@@ -1,16 +1,14 @@
-import { NgBootstrap4Page } from './app.po';
+import { AppPage } from './app.po';
 
 describe('ng-bootstrap4 App', () => {
-  let page: NgBootstrap4Page;
+  let page: AppPage;
 
   beforeEach(() => {
-    page = new NgBootstrap4Page();
+    page = new AppPage();
   });
 
-  it('should display welcome message', done => {
+  it('should display welcome message', () => {
     page.navigateTo();
-    page.getParagraphText()
-      .then(msg => expect(msg).toEqual('Welcome to aym!!'))
-      .then(done, done.fail);
+    expect(page.getParagraphText()).toEqual('Welcome to aym!');
   });
 });
